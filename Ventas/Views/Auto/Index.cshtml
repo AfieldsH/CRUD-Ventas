@@ -1,0 +1,42 @@
+﻿@model List<Ventas.Models.Auto>
+
+<div class="row">
+    <div class="col-12">
+        <h1>Listado de Autos</h1>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <table class="table table-striped">
+        <thead>
+             <tr>
+                <td>
+                    Id
+                </td>
+                <td>
+                    Nombre
+                </td>
+                 <td>
+                    Año
+                </td>
+                <td>
+                    Marca
+                </td>
+               
+            </tr>
+        </thead>
+       <tbody>
+           @foreach (var auto in Model)
+           {
+               <tr>
+                   <td>@auto.Id</td>
+                   <td>@auto.Nombre</td>
+                   <td>@auto.Anho</td>
+                   <td>@auto.IdMarcaNavigation.Nombre</td>                  
+               </tr>
+           }
+       </tbody>
+    </table>
+</div>

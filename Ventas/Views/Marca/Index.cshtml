@@ -1,0 +1,44 @@
+﻿@model List<Ventas.Models.Modelo>
+
+<div class="row">
+    <div class="col-12">
+        <h1>Listado de Modelos de Autos</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <a class="btn btn-success" href="Marca/FormMarca">Agregar Modelo</a>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                     <th>
+                         Id
+                     </th>
+                     <th>
+                        Nombre
+                     </th> 
+                      <th>
+                        Opciones
+                     </th>    
+                </tr>               
+            </thead>
+           <tbody>
+               @foreach (var modelo in Model)
+               {
+                   <tr>
+                       <td>@modelo.Id</td>
+                       <td>@modelo.Nombre</td>
+                        <td> 
+                            <a  class="btn btn-info"> Editar </a> 
+                            <a href="/Marca/Eliminar/@modelo.Id" class="btn btn-danger"> Eliminar </a> 
+                        </td>
+                   </tr>
+               }
+           </tbody>
+        </table>
+    </div>
+</div>
